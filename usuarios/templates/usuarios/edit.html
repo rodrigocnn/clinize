@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <form action="{%  url 'usuario_update' %}" method="post">
+            {% csrf_token %}
+
+            <input type="hidden" name="id_usuario" value="{{ usuario.id }}" >
+
+            <div class="row">
+                 <div class="col-md-12">
+                     <label class="control-label">UserName</label>
+                     {{ form.username }}
+                 </div>
+             </div>
+
+             <div class="row">
+                 <div class="col-md-12">
+                     <label class="control-label">Nome </label>
+                     {{ form.first_name }}
+                 </div>
+             </div>
+
+             <div class="row">
+                 <div class="col-md-12">
+                     <label class="control-label">Email </label>
+                     {{ form.email }}
+                 </div>
+             </div>
+
+             <div class="row">
+                 <div class="col-md-12">
+                     <label class="control-label">Senha </label>
+                     <input type="password" name="password" class="form-control">
+                 </div>
+             </div>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <button class="btn btn-info btn-fill">Atualizar</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock content %}

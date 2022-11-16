@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <form action="{%  url 'paciente_store' %}" method="post">
+
+           {% csrf_token %}
+
+           <div class="row">
+            <div class="col-md-12">
+                <label class="control-label">Nome</label>
+                {{ form.nome }}
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Data de Nascimento</label>
+
+                    {{ form.data_nascimento }}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">CPF</label>
+                    {{ form.cpf }}
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">RG</label>
+                    {{ form.rg }}
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="group-header">Contato</div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Email</label>
+                    {{ form.email }}
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Telefone</label>
+                    {{ form.telefone }}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="group-header">Endereço</div>
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="control-label">Endereço</label>
+                    {{ form.endereco }}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Número</label>
+                    {{ form.numero }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Complemento</label>
+                    {{ form.complemento }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Bairro</label>
+                    {{ form.bairro }}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Cidade</label>
+                    {{ form.cidade }}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Estado</label>
+                    {{ form.estado }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Observações</label>
+                    {{ form.observacoes }}
+                </div>
+            </div>
+        </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <button class="btn btn-success">Salvar</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock content %}

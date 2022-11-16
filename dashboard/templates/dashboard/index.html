@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="alert alert-primary" role="alert">
+      Bem Vindo Ao Gestor de Certificados.
+    </div>
+
+      <div class="card">
+
+        <div class="card-body">
+
+          <div class="row wrap-dashboard-panel">
+
+            <div class="col-lg-4 col-md-6">
+              <div class="panel panel-blue">
+                <div class="panel-heading">
+                  <div class="col-xs-3">
+                   <i class="fas fa-tasks"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                    <div class="huge">0,00</div>
+                    <div>Entradas</div>
+                  </div>
+                </div>
+
+                <a href="/instructors">
+                  <div class="panel-footer">
+                    <span class="pull-left">Detalhes</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix">
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="panel panel-red">
+                <div class="panel-heading">
+                  <div class="col-xs-3">
+                   <i class="fas fa-tasks"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                    <div class="huge">0,00</div>
+                    <div>Saídas</div>
+                  </div>
+                </div>
+
+                <a href="/trainings">
+                  <div class="panel-footer">
+                    <span class="pull-left">Detalhes</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix">
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="panel panel-yellow">
+                <div class="panel-heading">
+                  <div class="col-xs-3">
+                      <i class="fas fa-user-graduate"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                    <div class="huge">0,00</div>
+                    <div>Saldo</div>
+                  </div>
+                </div>
+
+                <a href="/students">
+                  <div class="panel-footer">
+                    <span class="pull-left">Detalhes</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix">
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endblock content %}

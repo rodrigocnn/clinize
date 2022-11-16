@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <form action="{%  url 'fluxo_caixa_update' %}" method="post">
+
+            {% csrf_token %}
+
+            <input type="hidden" name="tipo" value="CX" class="form-control">
+            <input type="hidden" name="id_lancamento" value="{{ lancamento.id }}" >
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="control-label">Data</label>
+                    {{ form.data }}
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="control-label">Descrição</label>
+                    {{ form.descricao }}
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="control-label">Valor</label>
+                    {{ form.valor }}
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="control-label">Tipos de Lançamento</label>
+                    <select name="tipo_lancamento"  class="form-control">
+
+
+                        {% for tipo in tipos %}
+
+                            {% if lancamento.tipo_lancamento.id == tipo.id %}
+                                <option selected value="{{ tipo.id }}" >{{ tipo.descricao }}</option>
+                            {% else %}
+                                <option  value="{{ tipo.id }}" >{{ tipo.descricao }}</option>
+                            {% endif %}
+
+                        {% endfor %}
+                      </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="control-label">Classificação </label>
+                    <select name="classificacao"  class="form-control">
+                        <option value="D" >Despesa</option>
+                        <option value="R">Receita</option>
+                      </select>
+
+                </div>
+
+            </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Observações</label>
+                        {{ form.observacoes }}
+                </div>
+            </div>
+        </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <button class="btn btn-info btn-fill pull-right mb-3 ">Atualizar</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock content %}

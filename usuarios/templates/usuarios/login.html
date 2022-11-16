@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MyClinic</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.1/dist/bootstrap-table.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/light-bootstrap-dashboard.css' %}" />
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+  </head>
+  <body>
+    <div class="bg-login">
+      <div class="container">
+        <div class="login_wrapper">
+          <div class="animate form login_form">
+            <div class="login_content">
+              <h1><img alt="logo"class="logo-login" src="/static/media/logo-origin.7381d2af.png"/></h1>
+
+              <form action="{%  url 'login' %}" method="post">
+
+                {% csrf_token %}
+                <input name="username" type="text" class="form-control"placeholder="Email"/>
+                <input name="password" type="password" class="form-control" placeholder="Senha"
+                />
+                <div class="row">
+                  <div class="col-md-12">
+                    <input type="submit" class="btn btn-danger submit-login" value="Acessar"/>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center"></div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="version">Versão Beta</span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.21.1/dist/bootstrap-table.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

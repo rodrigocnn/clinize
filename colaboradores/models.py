@@ -3,6 +3,7 @@ from django.db import models
 
 class Colaborador(models.Model):
     nome = models.CharField(max_length=100, unique=True)
+    cargo = models.ForeignKey("cargos.Cargo", on_delete=models.SET_NULL, null=True)
     data_nascimento = models.DateField()
     cpf = models.CharField(max_length=20, blank=True)
     rg = models.CharField(max_length=20)

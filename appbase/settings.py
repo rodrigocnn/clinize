@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'tipolancamentos.apps.TipolancamentosConfig',
     'usuarios.apps.UsuariosConfig',
     'dashboard.apps.DashboardConfig',
+    'colaboradores.apps.ColaboradoresConfig',
+    'cargos.apps.CargosConfig',
     'fontawesomefree',
 ]
 

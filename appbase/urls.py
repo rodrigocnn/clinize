@@ -8,6 +8,8 @@ from lancamentos.urls import urlpatterns as url_lancamentos
 from tipolancamentos.urls import urlpatterns as url_tipo_lancamentos
 from usuarios.urls import urlpatterns as url_usuarios
 from dashboard.urls import urlpatterns as url_dashboard
+from colaboradores.urls import urlpatterns as url_colaboradores
+from cargos.urls import urlpatterns as url_cargos
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
@@ -16,4 +18,6 @@ urlpatterns = [
     path('lancamentos/', include(url_lancamentos)),
     path('tipo-lancamentos/', include(url_tipo_lancamentos)),
     path('dashboard/', include(url_dashboard)),
+    path('colaboradores/', include(url_colaboradores)),
+    path('cargos/', include(url_cargos)),
 ]

@@ -4,7 +4,7 @@
 
 <div class="card">
     <div class="card-body">
-        <form action="{%  url 'paciente_store' %}" method="post">
+        <form action="{%  url 'colaborador_store' %}" method="post">
 
            {% csrf_token %}
 
@@ -37,6 +37,22 @@
                 </div>
             </div>
 
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Cargo</label>
+                    <select name="tipo_lancamento"  class="form-control">
+                        <option selected value="0">Selecione Cargo</option>
+
+                        {% for cargo in cargos  %}
+                            <option value="{{ cargo.id }}" >{{ cargo.descricao }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
 
         </div>
 
@@ -122,7 +138,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <button class="btn btn-success">Salvar</button>
+                        <button class="btn btn-info btn-fill pull-right mb-3">Salvar</button>
                     </div>
                 </div>
             </div>

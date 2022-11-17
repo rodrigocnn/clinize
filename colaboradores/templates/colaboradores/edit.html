@@ -4,10 +4,10 @@
 
 <div class="card">
     <div class="card-body">
-        <form action="{%  url 'paciente_update' %}" method="post">
+        <form action="{%  url 'colaborador_update' %}" method="post">
 
 
-            <input type="hidden" name="id_paciente" value="{{ paciente.id }}" >
+            <input type="hidden" name="id_colaborador" value="{{ colaborador.id }}" >
            {% csrf_token %}
 
            <div class="row">

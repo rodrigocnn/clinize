@@ -10,6 +10,7 @@ from usuarios.urls import urlpatterns as url_usuarios
 from dashboard.urls import urlpatterns as url_dashboard
 from colaboradores.urls import urlpatterns as url_colaboradores
 from cargos.urls import urlpatterns as url_cargos
+from agenda.urls import urlpatterns as url_agenda
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
@@ -20,4 +21,5 @@ urlpatterns = [
     path('dashboard/', include(url_dashboard)),
     path('colaboradores/', include(url_colaboradores)),
     path('cargos/', include(url_cargos)),
+    path('agenda/', include(url_agenda))
 ]

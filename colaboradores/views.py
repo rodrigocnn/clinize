@@ -11,8 +11,8 @@ from colaboradores.models import Colaborador
 
 @login_required
 def index(request):
-    coloaboradores = Colaborador.objects.all()
-    return render(request, "colaboradores/index.html", context={"colaboradores": coloaboradores})
+    colaboradores = Colaborador.objects.all()
+    return render(request, "colaboradores/index.html", context={"colaboradores": colaboradores})
 
 
 @login_required

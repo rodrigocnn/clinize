@@ -26,10 +26,10 @@ def login(request):
 
         if user:
             login_django(request, user)
-            return redirect(reverse('pacientes_home'))
+            return redirect(reverse('dashboard'))
         else:
             messages.error(request, "Usuário ou senha inválidos!")
-            return redirect(reverse('pacientes_home'))
+            return redirect(reverse('dashboard'))
 
 
 def logout(request):

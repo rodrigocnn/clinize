@@ -18,11 +18,8 @@ def store(request):
     if request.method == 'POST':
         form = TipoLancamentoForm(request.POST)
         if form.is_valid():
-            lancamento = TipoLancamento()
-            lancamento.descricao = request.POST['descricao']
-            lancamento.tipo = request.POST['tipo']
+            form.save()
             messages.success(request, "Lançamento Cadastrado com Sucesso!")
-            lancamento.save()
 
     return redirect(reverse('tipo_lancamento_home'))
 

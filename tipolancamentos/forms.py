@@ -1,7 +1,11 @@
 
-from django import forms
+# from django import forms
+from django.forms import ModelForm
+
+from tipolancamentos.models import TipoLancamento
 
 
-class TipoLancamentoForm(forms.Form):
-    descricao = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    tipo = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control'}))
+class TipoLancamentoForm(ModelForm):
+    class Meta:
+        model = TipoLancamento
+        fields = ['descricao', 'tipo']

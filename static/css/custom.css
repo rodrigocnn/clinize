@@ -1,16 +1,23 @@
 .despesa span{
+    width: 80px;
     color: #fff;
     background-color: #e94a4a;
     padding: 0.5rem 0.8rem 0.5rem 0.8rem ;
     border-radius: 0.5rem;
     font-size: 12px;
+    display: block;
+    text-align: center;
 }
 .receita span{
+    width: 80px;
     color: #fff;
     background-color: #2286c8;
     padding: 0.5rem 0.8rem 0.5rem 0.8rem ;
     border-radius: 0.3rem;
     font-size: 12px;
+    display: block;
+    text-align: center;
+
 }
 
 .group-header{

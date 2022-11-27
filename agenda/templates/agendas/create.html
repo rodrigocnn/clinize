@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <form action="{%  url 'agenda_store' %}" method="post">
+
+           {% csrf_token %}
+
+           <div class="row">
+            <div class="col-md-12">
+                <label class="control-label">Título</label>
+                <input name="descricao" class="form-control">
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Data da Consulta</label>
+                    <input name="data_evento" class="form-control datepicker">
+                </div>
+            </div>
+        </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">Inicio</label>
+                        <select name="hora_inicio"  class="form-control select-hours">
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">Término</label>
+                        <select name="hora_fim"  class="form-control select-hours">
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <button class="btn btn-info btn-fill pull-right mb-3">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </form>
+    </div>
+</div>
+{% endblock content %}

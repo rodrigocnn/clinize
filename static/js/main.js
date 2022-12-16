@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
+    selectable: true,
     displayEventTime: false,
     initialDate: new Date(),
     locale: 'pt-br',
@@ -21,17 +22,29 @@ document.addEventListener('DOMContentLoaded', function() {
     },
 
     events: {
-      url: 'ics/feed.ics',
-      format: 'ics',
+      url: 'http://127.0.0.1:8000/agenda/events',
       failure: function() {
         document.getElementById('script-warning').style.display = 'block';
       }
     },
+    dateClick: function(info) {
+
+      alert('Resource ID: ' + info.resource);
+    },
+
+    select: function(info) {
+      //console.log('teste', info.event.title)
+
+    }
+
 
   });
 
   calendar.render();
+
 });
+
+
 
 
 $(document).ready(function(){

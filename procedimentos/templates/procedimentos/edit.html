@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <form action="{%  url 'procedimento_update' %}" method="post">
+
+
+            <input type="hidden" name="id_procedimento" value="{{ procedimento.id }}" >
+           {% csrf_token %}
+
+           <div class="row">
+            <div class="col-md-12">
+                <label class="control-label">Descrição</label>
+                {{ form.descricao }}
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Preço</label>
+
+                    {{ form.valor}}
+                </div>
+            </div>
+        </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <button class="btn btn-info btn-fill">Atualizar</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock content %}

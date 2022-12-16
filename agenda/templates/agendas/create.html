@@ -16,6 +16,49 @@
          </div>
 
          <div class="row">
+            <div class="col-md-12">
+                <label class="control-label">Paciente</label>
+                <select name="paciente_id"  class="form-control">
+                    <option selected value="0">Selecione Paciente</option>
+
+                    {% for paciente in pacientes %}
+                        <option value="{{ paciente.id }}" >{{ paciente.nome }}</option>
+                    {% endfor %}
+                  </select>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <label class="control-label">Procedimento</label>
+                <select name="procedimento_id"  class="form-control">
+                    <option selected value="0">Selecione Procedimento</option>
+                        {% for procedimento in procedimentos %}
+                            <option value="{{ procedimento.id }}" >{{ procedimento.descricao }}</option>
+                        {% endfor %}
+                  </select>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <label class="control-label">Colaborador</label>
+                <select name="colaborador_id"  class="form-control">
+                    <option selected value="0">Colaborador</option>
+                        {% for colaborador in colaboradores %}
+                            <option value="{{ colaborador.id }}" >{{ colaborador.nome }}</option>
+                        {% endfor %}
+                  </select>
+
+            </div>
+
+        </div>
+
+         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
                     <label class="control-label">Data da Consulta</label>

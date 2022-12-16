@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
@@ -27,7 +28,7 @@ def store(request):
         if form.is_valid():
             paciente = Paciente()
             paciente.nome = request.POST['nome']
-            paciente.data_nascimento = request.POST['data_nascimento']
+            paciente.data_nascimento = datetime.strptime(request.POST['data_nascimento'], "%d/%m/%Y").strftime('%Y-%m-%d')
             paciente.cpf = request.POST['cpf']
             paciente.rg = request.POST['rg']
             paciente.email = request.POST['email']

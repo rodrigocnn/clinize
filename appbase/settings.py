@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'colaboradores.apps.ColaboradoresConfig',
     'cargos.apps.CargosConfig',
     'agenda.apps.AgendaConfig',
+    'procedimentos.apps.ProcedimentosConfig',
     'fontawesomefree',
 ]
 

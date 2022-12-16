@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if messages %}
+    <div class="alert alert-success" role="alert">
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    </div>
+{% endif %}
+
+
+{% include "modal_delete.html" %}
+
+<a href="/procedimentos/create" class="btn btn-info btn-fill pull-right mb-3">Cadastrar</a>
+
+<div class="card">
+    <div class="card-body">
+
+    <table data-toggle="table"
+        data-search="true"
+        data-pagination="true"
+        data-show-columns="true"
+        data-pagination-pre-text="Anterior"
+        data-pagination-next-text="Próximo"
+        data-page-list="[10, 25, 50, 100, all]"
+        class="table">
+     <thead>
+         <tr>
+             <th scope="col">#</th>
+             <th scope="col">Descrição</th>
+             <th scope="col">Valor</th>
+
+             <th scope="col">Ações</th>
+         </tr>
+     </thead>
+     <tbody>
+
+         {% for procedimento in procedimentos %}
+
+         <tr>
+             <td>{{ procedimento.id }}</td>
+             <td>{{ procedimento.descricao }}</td>
+             <td>{{ procedimento.valor }}</td>
+
+             <td>
+                <a title="Editar"  href="{%  url 'procedimento_edit' procedimento.id %} "  class="fa fa-edit " ></a>
+                <a title="Excluir"
+                   href="#"
+                   class="fa fa-trash deleteRegister"
+                   data-delete="{%  url 'procedimento_delete' procedimento.id %}"
+                   data-toggle="modal"
+                   data-target="#deleteModal" >
+                </a>
+
+             </td>
+         </tr>
+
+         {% endfor %}
+ </table>
+
+    </div>
+</div>
+{% endblock content %}
